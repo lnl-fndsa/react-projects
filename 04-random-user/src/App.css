@@ -1,0 +1,68 @@
+:root{
+  --color : #66c8a7;
+}
+
+h1 {
+	background-image: radial-gradient(circle at 48% 77%, rgba(27, 27, 27, 0.04) 0%, rgba(27, 27, 27, 0.04) 50%, rgba(135, 135, 135, 0.04) 50%, rgba(135, 135, 135, 0.04) 100%), radial-gradient(circle at 74% 36%, rgba(223, 223, 223, 0.04) 0%, rgba(223, 223, 223, 0.04) 50%, rgba(113, 113, 113, 0.04) 50%, rgba(113, 113, 113, 0.04) 100%), radial-gradient(circle at 62% 13%, rgba(16, 16, 16, 0.04) 0%, rgba(16, 16, 16, 0.04) 50%, rgba(168, 168, 168, 0.04) 50%, rgba(168, 168, 168, 0.04) 100%), linear-gradient(223deg, rgb(37, 143, 136), rgb(87, 117, 249));
+	color: rgba(255, 255, 255, 1);
+}
+
+.loader-container, .error-container{
+  margin: 50px 0;
+}
+
+.loader{
+  border: 3px solid hsla(185, 100%, 62%, 0.2);
+  border-top-color: #3cefff;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+article{
+  border-radius: 5px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  background-color: var(--color);
+}
+
+.img-container img{
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.article-footer{
+  background-color: #333;
+}
+
+.article-footer button{
+  color: var(--color);
+  background: none;
+  border: 2px solid;
+  margin: 0 5px;
+  padding: 5px 10px;
+  transition: 0.25s;
+}
+
+.article-footer button:hover,
+.article-footer button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em #e5ff60;
+  transform: translateY(-0.25em);
+  border-color: #e5ff60;
+  color: #fff;
+  outline: 0;
+}
+
+@media(max-width: 576px){
+	article h2{
+	font-size: 18px;
+	}
+}

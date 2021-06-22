@@ -1,0 +1,149 @@
+:root {
+	--bgColorH-rgba: rgba(173, 216, 230, 1);
+}
+
+h1{
+  /* visibility: hidden; */
+	background-image:
+    radial-gradient(circle at 48% 77%, rgba(27, 27, 27,0.04) 0%, rgba(27, 27, 27,0.04) 50%,rgba(135, 135, 135,0.04) 50%, rgba(135, 135, 135,0.04) 100%),
+    radial-gradient(circle at 74% 36%, rgba(223, 223, 223,0.04) 0%, rgba(223, 223, 223,0.04) 50%,rgba(113, 113, 113,0.04) 50%, rgba(113, 113, 113,0.04) 100%),
+    radial-gradient(circle at 62% 13%, rgba(16, 16, 16,0.04) 0%, rgba(16, 16, 16,0.04) 50%,rgba(168, 168, 168,0.04) 50%, rgba(168, 168, 168,0.04) 100%),
+    linear-gradient(223deg, rgb(37, 143, 136),rgb(87, 117, 249));
+	color: rgba(255, 255, 255, 1);
+}
+
+.slider-container{
+	overflow-x: hidden;
+}
+
+.slider {
+	position: relative;
+}
+
+article {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s linear;
+}
+
+article.activeSlide {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
+}
+
+article.lastSlide {
+	transform: translateX(-100%);
+}
+
+article.nextSlide {
+	transform: translateX(100%);
+}
+
+.image-container {
+	box-shadow: 0 0 10px 2px #666;
+}
+
+.image {
+	width: 100%;
+}
+
+.thumbnails-container {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.thumbnail {
+  width: 100%;
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.prev, .next {
+	border: none;
+	padding: 30px 15px;
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.prev {
+	background: linear-gradient( to left, rgba(255, 255, 255, 0) 5%, rgba(75, 74, 74, 0.5) 100%);
+}
+
+.prev:hover {
+	background: linear-gradient(to left, rgba(255, 255, 255, 0) 5%, var(--bgColorH-rgba) 100%);
+}
+
+.prev:focus {
+	outline: none;
+}
+
+.next {
+	background: linear-gradient( to right, rgba(255, 255, 255, 0) 5%, rgba(75, 74, 74, 0.5) 100%);
+}
+
+.next:hover {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 5%, var(--bgColorH-rgba) 100%);
+}
+
+.next:focus {
+	outline: none;
+}
+
+@media (min-width: 1200px){
+  .slider{
+    height: 700px;
+  }
+  .image {
+    height: 700px;
+  }
+  .thumbnail{
+    height: auto;
+  }
+}
+
+@media (max-width: 1200px){
+  .slider{
+    height: 680px;
+  }
+
+  .image{
+    height: auto;
+  }
+
+  .thumbnail {
+		width: 100%;
+    height: 140px;
+	}
+
+	.image-container, .thumbnails-container, .thumbnail{
+    margin-bottom: 10px;
+  }
+
+  .prev-container, .next-container{
+    height: 360px;
+  }
+}
+
+@media (max-width: 992px){
+  .prev-container, .next-container{
+    height: 0;
+		visibility: hidden;
+		display: none;
+	}
+  .prev, .next{
+		visibility: hidden;
+		display: none;
+	}
+}
+
+@media (max-width: 576px){
+  .thumbnail {
+		width: 100%;
+    height: auto;
+	}
+}
